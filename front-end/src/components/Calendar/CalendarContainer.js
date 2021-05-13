@@ -4,12 +4,9 @@ import DailyCalendar from "./DailyCalendar";
 import styled from 'styled-components';
 
 const CalendarElement = styled.div`
+	max-width: 100%;
 `;
 
-const Button = styled.div`
-    cursor: pointer;
-    height: 15px;
-`;
 class CalendarContainer extends Component {
     constructor(props) {
         super(props);
@@ -29,8 +26,8 @@ class CalendarContainer extends Component {
                 <div className="top-header">
                     <span>Calendar</span>
                     <div className="view-change">
-                        <Button onClick={() => this.toggleView("monthly")} className="icon view-toggle">calendar_today</Button>
-                        <Button onClick={() => this.toggleView("daily")} className="icon view-toggle">date_range</Button>
+                        <span onClick={() => this.toggleView("monthly")} className="icon view-toggle">calendar_today</span>
+                        <span onClick={() => this.toggleView("daily")} className="material-icons">date_range</span>
                     </div>
                 </div>
                 <CalendarElement>

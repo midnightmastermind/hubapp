@@ -41,15 +41,11 @@ class App extends Component {
             <Provider store={store}>
                 <Router>
                     <div className="App">
-                        <video autoPlay loop muted>
-                                <source src={background} type='video/mp4' />
-                                <source src={background} type="video/ogg" />
-                        </video>
-                      <Route exact path="/" component={Landing} />
-                      <Route exact path="/register" component={Register} />
-                      <Route exact path="/login" component={Login} />
                       <Switch>
-                        <PrivateRoute exact path="/hub" component={Hub} />
+                      	<Route exact path="/" component={Landing} />
+                      	<Route path="/register" component={Register} />
+                      	<Route path="/login" component={Login} />
+                      	<PrivateRoute path="/hub" component={Hub} />
                       </Switch>
                     </div>
                 </Router>

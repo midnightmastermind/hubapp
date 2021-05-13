@@ -12,7 +12,7 @@ export const fetchEvents = dispatch => {
   return dispatch => {
     dispatch(requestEvents())
     return axios
-    .get("/events")
+    .get("/api/events")
     .then(res => {
       const events = res.data;
       const sortedEvents = {};
@@ -52,9 +52,9 @@ export const fetchEvents = dispatch => {
 export const updateEvent = eventObj => dispatch => {
   let requestUrl;
   if (eventObj._id) {
-        requestUrl = '/events/' + eventObj._id + '/update';
+        requestUrl = '/api/events/' + eventObj._id + '/update';
   } else {
-       requestUrl = '/events/create';
+       requestUrl = '/api/events/create';
   }
   axios
     .post(requestUrl, eventObj)

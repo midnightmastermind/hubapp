@@ -11,7 +11,7 @@ export const fetchBlocks = dispatch => {
   return dispatch => {
     dispatch(requestBlocks())
     return axios
-    .get("/blocks")
+    .get("/api/blocks")
     .then(res => {
       const blocks = res.data;
       dispatch(receiveBlocks(blocks));
@@ -28,9 +28,9 @@ export const fetchBlocks = dispatch => {
 export const updateBlock = block => dispatch => {
   let requestUrl;
   if (block._id) {
-        requestUrl = '/blocks/' + block._id + '/update';
+        requestUrl = '/api/blocks/' + block._id + '/update';
   } else {
-       requestUrl = '/blocks/create';
+       requestUrl = '/api/blocks/create';
   }
   axios
     .post(requestUrl, block)
